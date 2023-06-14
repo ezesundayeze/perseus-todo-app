@@ -1,4 +1,4 @@
-// templates/index.rs
+
 use perseus::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::rc::Rc;
@@ -24,7 +24,7 @@ fn todo_form<G: Html>(cx: Scope, state: &TodoListStateRx) -> View<G> {
     let new_todo_form = new_todo(cx.clone(), state);
 
     view! { cx,
-        div() {
+        div {
             (new_todo_form)
         }
     }
@@ -47,7 +47,7 @@ fn todo_list<G: Html>(cx: Scope, state: &TodoListStateRx) -> View<G> {
                                     (item)
                                     button( class = "remove-button", on:click = move |_| {
                                         let mut todos = state.todos.get().as_ref().clone();
-                                        todos.remove(index);
+                                        todos.retain(|todo| *todo != item);
                                         state.todos.set(todos.to_vec());
                                     }) { "x" }
                                 }
@@ -77,7 +77,7 @@ fn new_todo<G: Html>(cx: Scope, state: &TodoListStateRx) -> View<G> {
         form(on:submit = move |e: Event| {
             e.prevent_default();
             let new_todo: Rc<String> = state.new_todo.get().clone();
-            println!("{}", new_todo);
+
             if !new_todo.is_empty() {
                 let new_todo_str: String = (*new_todo).clone();
                 let mut todos = state.todos.get().as_ref().clone();
