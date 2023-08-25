@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #badff5, #fff);
+    font-family: Arial, sans-serif;
+}
+
+#todo-container {
+    width: 400px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#todo-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+
+#todo-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition-duration: 0.4s;
+    font-size: 16px;
+}
+
+#todo-button:hover {
+    background-color: rgb(241, 28, 99);
+    color: white;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.remove-button {
+    background-color: rgb(241, 28, 99);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 7px;
+}
+#todo-input, #todo-button {
+    box-sizing: border-box;
+}
+
+#todo-button, .remove-button {
+    transition: background-color 0.3s ease;
+}
+.remove-button:hover {
+    background-color: darkred;
+}
+
+#todo-input, #todo-button, .remove-button {
+    border-radius: 10px;
+}
+
+#todo-items {
+    max-height: 60vh; /* adjust this value as needed */
+    overflow-y: auto; /* allows scrolling */
+}
+h1 {
+    font-size: 1.5em;
+    color: #0a1854;
+    text-align: center;
+    padding-bottom: 20px;
+    
+}
+#page-not-found{
+    color: rgb(255, 0, 179);
+}
+

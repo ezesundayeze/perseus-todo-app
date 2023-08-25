@@ -47,19 +47,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "app"
-version = "0.1.0"
-dependencies = [
- "perseus",
- "perseus-axum",
- "serde",
- "serde_json",
- "sycamore",
- "tokio",
- "web-sys",
-]
-
-[[package]]
 name = "async-trait"
 version = "0.1.68"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -796,6 +783,19 @@ dependencies = [
  "thiserror",
  "tokio",
  "wasm-bindgen",
+ "web-sys",
+]
+
+[[package]]
+name = "rust-perseus-todo-app"
+version = "0.1.0"
+dependencies = [
+ "perseus",
+ "perseus-axum",
+ "serde",
+ "serde_json",
+ "sycamore",
+ "tokio",
  "web-sys",
 ]
 
